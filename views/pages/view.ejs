@@ -1,0 +1,83 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+  body {
+    background: #f9f9f9;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  .card {
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+
+  .card-header {
+    background: #000;
+    color: white;
+    font-size: 1.25rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .detail-label {
+    font-weight: 500;
+    color: #555;
+  }
+
+  .detail-value {
+    font-size: 1.1rem;
+  }
+
+  .btn-back {
+    margin: 20px auto;
+    display: block;
+  }
+
+  @media screen and (max-width: 500px) {
+    .card {
+      margin: 20px 10px;
+    }
+
+    .card-header {
+      font-size: 1rem;
+    }
+
+    .detail-value {
+      font-size: 1rem;
+    }
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header text-center">
+        <%= isPurchase ? 'Purchase Details' : 'Receipt Details' %>
+      </div>
+      <div class="card-body">
+        <p>
+          <span class="detail-label">Date:</span>
+          <span class="detail-value"
+            ><%= new Date(item.date).toLocaleDateString() %></span
+          >
+        </p>
+        <p>
+          <span class="detail-label">Amount:</span>
+          <span class="detail-value">Rs <%= item.amount %></span>
+        </p>
+        <p>
+          <span class="detail-label">Category:</span>
+          <span class="detail-value"><%= item.category || 'N/A' %></span>
+        </p>
+        <p>
+          <span class="detail-label">Description:</span>
+          <span class="detail-value"
+            ><%= item.description || 'No description' %></span
+          >
+        </p>
+      </div>
+    </div>
+
+    <a href="/dashboard" class="btn btn-dark btn-back">← Back to Dashboard</a>
+  </div>
+</body>

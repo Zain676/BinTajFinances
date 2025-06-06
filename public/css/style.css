@@ -1,0 +1,96 @@
+a,
+button {
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+
+h2,
+h3 {
+  margin-top: 30px;
+}
+
+table tbody td a {
+  color: black ;
+}
+
+@media (max-width: 576px) {
+  h1, h2, h3, h4, h5 {
+    font-size: 1rem !important;
+  }
+
+  .btn {
+    font-size: 0.9rem !important;
+    padding: 2px 1%;
+    width: 100%;
+    margin-bottom:10px;
+  }
+
+  .card {
+    padding: 10px !important;
+  }
+
+   .stat-box {
+    font-size: 0.9rem !important;
+    padding: 8px !important;
+    margin-bottom: 8px;
+  }
+
+  .stat-box h4 {
+    font-size: 0.95rem !important;
+  }
+
+  .stat-box h3 {
+    font-size: 1.1rem !important;
+  }
+
+  body {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 10px !important;
+  }
+
+    .main-wrapper {
+    max-width: 95% !important;
+    margin: 0 auto;
+}
+ 
+}
+
+@media (max-width: 500px) {
+  .table th,
+  .table td {
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+
+  .table td .btn{
+    font-size: 0.7rem !important; 
+    padding: 2px 0 !important;
+    margin: 0 3px;
+    width: 1rem;
+}
+}
+
+
+@media (max-width: 425px) {
+     .stat-box {
+    font-size: 0.7rem !important;
+    padding: 6px !important;
+    margin-bottom: 6px;
+  }
+  .container {
+    margin-top: 0.9rem !important;
+  }
+
+  .stat-box h4 {
+    font-size: 0.7rem !important;
+  }
+
+  .stat-box h3 {
+    font-size: 0.7rem !important;
+    margin: 0;
+  }
+}
+

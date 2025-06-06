@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Edit Purchase</h1>
+    <form action="/edit-purchase/<%= purchase._id %>" method="POST">
+      <div class="form-floating mb-3">
+        <input
+          type="date"
+          class="form-control"
+          id="dateInput"
+          name="date"
+          value="<%= purchase.date.toISOString().split('T')[0] %>"
+          required
+        />
+        <label for="dateInput">Date</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="number"
+          class="form-control"
+          id="amountInput"
+          name="amount"
+          value="<%= purchase.amount %>"
+          required
+        />
+        <label for="amountInput">Amount</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input
+          type="text"
+          class="form-control"
+          id="descInput"
+          name="description"
+          value="<%= purchase.description %>"
+          required
+        />
+        <label for="descInput">Description</label>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" id="categoryInput" name="category" required>
+          <option value="" disabled selected>Select category</option>
+          <option value="lawn">Lawn</option>
+          <option value="chiffon">Chiffon</option>
+          <option value="cotton">Cotton</option>
+          <option value="karandi">Karandi</option>
+          <option value="linen">Linen</option>
+          <option value="silk">Silk</option>
+          <option value="net">Net</option>
+          <option value="organza">Organza</option>
+          <option value="cambric">Cambric</option>
+          <option value="khaddar">Khaddar</option>
+          <option value="other">Other</option>
+        </select>
+        <label for="categoryInput">Category</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update</button>
+      <a href="/dashboard" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+  </div>
+</body>
