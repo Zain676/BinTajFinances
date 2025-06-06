@@ -24,11 +24,6 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 const dbUrl = process.env.ATLASDB_URL;
 
-store.on("error", () => {
-  console.log("ERRor in mongo session store", err);
-});
-
-
 // DB Connection
 
 
