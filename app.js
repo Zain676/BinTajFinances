@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const engine = require("ejs-mate");
 const path = require("path");
-const MongoStore = require("connect-mongo");
 const Purchase = require("./models/purchase");
 const Receipt = require("./models/receipt");
 
@@ -24,14 +23,6 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 
 const dbUrl = process.env.ATLASDB_URL;
-
-const store = MongoStore.create({
-  mongoUrl: dbUrl,
-  crypto: {
-    secret: process.env.SECRET,
-  },
-  touchAfter: 24 * 3600,
-});
 
 store.on("error", () => {
   console.log("ERRor in mongo session store", err);
@@ -168,6 +159,7 @@ app.post("/delete-receipt/:id", async (req, res) => {
   await Receipt.findByIdAndDelete(req.params.id);
   res.redirect("/dashboard");
 });
+
 
 app.listen(8000, () => {
   console.log("Server is listening to post 8000");

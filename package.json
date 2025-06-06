@@ -1,5 +1,8 @@
 {
-  "name": "BinTajFinances",
+  "engines": {
+    "node": "22.14.0"
+  },
+  "name": "bintajfinances",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
